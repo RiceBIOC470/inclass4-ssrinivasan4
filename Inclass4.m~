@@ -13,13 +13,12 @@ for i = 1:size(var,1)
     dlmwrite('inclass4.txt',var(i,:), '-append');
 end
 fclose(fid)
-fid=fopen('inclass4.txt', 'a');
+
 fprintf(fid, 'Random numbers 2\n');
 var2=rand(9,7);
 for i = 1:size(var2,1)
     dlmwrite('inclass4.txt',var2(i,:), '-append');
 end
-fclose(fid)
 %SS b.
 fin=fopen('inclass4.txt', 'r');
 line1=fgetl(fin)
@@ -29,5 +28,5 @@ arr1=strsplit(line2, "\t")
 % variable which is true if the sum of the numbers in the array is greater
 % than or equal to 10 and false if it is less than 10. 
 
-rand_array=randi([0,5],1, 5)
+rand_array=randi([0,10],1, 30)
 greater_10=sum(rand_array) >= 10
